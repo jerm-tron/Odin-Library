@@ -8,5 +8,25 @@
     <title>Library</title>
   </head>
   <body>
+    <header>Library</header>
+    <dialog class="modal">
+      <h2>Enter a book</h2>
+      <form action="put" id="hello" method="dialog">
+        <label for="title">Title:</label>
+        <input type="text" class="title" /><br />
+        <label for="author">Author:</label
+        ><input type="text" class="author" /><br />
+        <label for="pages">Pages:</label
+        ><input type="number" class="pages" /><br />
+        <div class="reading">
+          <button class="submit" type="submit" form="form">Add</button>
+          <button class="close">Close</button>
+        </div>
+      </form>
+    </dialog>
+    <main>
+      <button class="add-books">New Book</button>
+      <div class="library-display"><div class="book-card"></div></div>
+    </main>
   </body>
 </html>

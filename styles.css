@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+body {
+  height: 100vh;
+}
+
+header {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 5rem;
+  color: white;
+  background-color: #4b5563;
+  padding-bottom: 0.7rem;
+}
+
+main {
+  height: 91%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.library-display {
+  height: 80%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+.book-card {
+  background: red;
+  height: 100%;
+}
+
+.add-books {
+  margin-bottom: 2.5rem;
+  padding: 12px;
+  font-size: 2.1rem;
+  border-radius: 30px;
+  background: #1d4ed8;
+  color: white;
+  border: white;
+}
+
+.add-books:hover {
+  background: yellow;
+}
+
+dialog {
+  margin: auto;
+  padding: 2rem;
+  border: 2px solid black;
+  position: absolute;
+  border-radius: 20px;
+  height: 20rem;
+  width: 20rem;
+  background: #e5e7eb;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  height: 100%;
+}
+
+.title,
+.author,
+.pages {
+  height: 23px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.reading {
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit {
+  height: 2rem;
+  width: 5rem;
+  border-radius: 10px;
+  background: #22c55e;
+}
+
+.close {
+  height: 2rem;
+  width: 5rem;
+  border-radius: 10px;
+  background: #dc2626;
+}
