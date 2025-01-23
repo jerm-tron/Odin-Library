@@ -1,24 +1,37 @@
-const display = document.querySelector(".library-display");
 const modal = document.querySelector(".modal");
 const openModal = document.querySelector(".add-books");
 const closeModal = document.querySelector(".close");
+const addBook = document.querySelector(".submit-bttn");
 
-const myLibrary = [{ title: "hello", author: "jr Elson" }];
+const myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
 }
 
 function addBookToLibrary() {
-  const books = new Book("title", "author", pages, "read");
-  myLibrary.push(books);
+  let title = document.querySelector("#title").value;
+  let author = document.querySelector("#author").value;
+  let pages = document.querySelector("#pages").value;
+  let newBook = new Book(title, author, pages);
+  myLibrary.push(newBook);
 }
 
-function displayBook() {
-  myLibrary.forEach((book) => console.log("hello")); //not yet implemented
+function displayBooks() {
+  const display = document.querySelector(".library-display");
+  display.innerHTML = "";
+
+  for (let i = 0; i < myLibrary.length; i++) {
+    let book = myLibrary[i];
+    let bookEl = document.createElement("div");
+    bookEl.classList.add("book-card");
+    bookEl.innerHTML = `<p>${book.title}<p>
+    <p>Author:${book.author}</p>
+    <p>Pages:${book.pages}</p>`;
+    display.appendChild(bookEl);
+  }
 }
 
 openModal.addEventListener("click", () => {
@@ -27,4 +40,10 @@ openModal.addEventListener("click", () => {
 
 closeModal.addEventListener("click", () => {
   modal.close();
+});
+
+addBook.addEventListener("click", (e) => {
+  e.preventDefault();
+  addBookToLibrary();
+  displayBooks();
 });
